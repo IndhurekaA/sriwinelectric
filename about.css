@@ -106,8 +106,10 @@
 }
 
 .story-content .lead-para{
-  color:var(--text-dim);
+  color: rgba(36, 34, 34, 0.655);
   font-size:14.5px;
+  font-family: sans-serif;
+  font-weight: 400;
   line-height:1.8;
   margin-bottom:16px;
 }
@@ -122,7 +124,7 @@
 ========================================= */
 
 .story-right{
-  width:100%;
+  width:130%;
   margin:0;
   padding:0;
   border:none;
@@ -149,9 +151,10 @@
   width:100%;
   height:100%;
   margin:0;
-  padding:0;
+  padding:0px;
   object-fit:cover;
   object-position:center;
+  mix-blend-mode: multiply;
 }
 
 
@@ -344,93 +347,172 @@
   }
 
 }
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 12px 22px;
+
+    background:transparent;
+    color: #111212;
+
+    border: 1px solid #98ddca;
+    border-radius: 6px;
+
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+
+    box-shadow: 0 0 5px rgba(152, 221, 202, 0.5);
+
+    transition: all 0.5s ease;
+}
+
+.btn:hover {
+    color: #0e0d0d;
+
+    background: rgba(152, 221, 202, 0.1);
+
+    box-shadow:
+        0 0 20px rgba(59, 77, 72, 0.8),
+        0 0 30px rgba(135, 188, 173, 0.6);
+
+    transform: translateY(-2px);
+}
+
+.btn i {
+    transition: transform 0.4s ease;
+}
+
+.btn:hover i {
+    transform: translateX(5px);
+}
 
 /* =========================================
    WHY CHOOSE US
 ========================================= */
-
-.why-grid {
-  display: grid;
-
-  grid-template-columns:
-    repeat(auto-fill, minmax(300px, 1fr));
-
-  gap: 20px;
+.why-us{
+    padding:30px 0;
 }
 
+.why-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:30px;
+}
 
 .why-card {
-  background: var(--surface);
+    position: relative;
+    overflow: hidden;
 
-  border: 1px solid var(--line);
+    padding: 30px;
+    border-radius: 18px;
 
-  border-radius: 8px;
+    background: #ffffff;
+    border: 1px solid #d7e8e6;
 
-  padding: 30px 26px;
+    transition:
+        transform 1.2s ease,
+        box-shadow 1.2s ease,
+        border-color 1.2s ease;
 
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    border-color 0.3s ease;
+    isolation: isolate;
 }
+.why-card::before {
+    content: "";
 
+    position: absolute;
 
+    width: 58px;
+    height: 58px;
+
+    top: 30px;
+    left: 30px;
+
+    border-radius: 50%;
+
+    background: #159b8a;
+
+    box-shadow: 0 0 0 0 #159b8a;
+
+    z-index: 0;
+
+    transition:
+        box-shadow .8s ease;
+}
+.why-card:hover::before {
+    box-shadow: 0 0 0 450px #159b8a;
+}
 .why-card:hover {
-  transform: translateY(-5px);
+    transform: translateY(-6px);
 
-  border-color: var(--accent-2);
+    border-color: #159b8a;
 
-  box-shadow:
-    0 20px 40px -22px rgba(21, 155, 138, 0.28);
+    box-shadow:
+        0 18px 40px rgba(21, 155, 138, .18);
+}.why-icon {
+    position: relative;
+    z-index: 2;
+
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 20px;
+
+    border-radius: 50%;
+
+    background: #e8f7f5;
+    color: #159b8a;
+
+    font-size: 22px;
+
+    transition:
+        background .4s ease,
+        color .4s ease,
+        transform .4s ease;
 }
-
-
-.why-icon {
-  width: 48px;
-  height: 48px;
-
-  border-radius: 50%;
-
-  background: #e9f6f4;
-
-  color: var(--accent-2);
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  font-size: 18px;
-
-  margin-bottom: 18px;
-
-  transition: transform 0.3s ease;
-}
-
 
 .why-card:hover .why-icon {
-  transform: scale(1.08) rotate(-6deg);
+    background: #ffffff;
+    color: #159b8a;
+
+    transform: scale(1.08);
 }
+.why-card h3 {
+    position: relative;
+    z-index: 2;
 
-
-.why-card h4 {
-  font-size: 16px;
-
-  margin-bottom: 10px;
-
-  letter-spacing: 0.02em;
+    transition: color .4s ease;
 }
-
-
 .why-card p {
-  font-size: 13.5px;
+    position: relative;
+    z-index: 2;
+    font-size: 16px;
+    font-family:system-ui, sans-serif;
 
-  color: var(--text-dim);
-
-  line-height: 1.6;
+    transition: color .4s ease;
 }
 
+.why-card:hover h3 {
+    color: #ffffff;
+}
 
+.why-card:hover p {
+    color: rgba(255, 255, 255, .9);
+}
+.why-card:hover {
+    transform: translateY(-8px);
+
+    border-color: #159b8a;
+
+    box-shadow:
+        0 18px 40px rgba(21, 155, 138, .18);
+}
 /* =========================================
    ABOUT CTA
 ========================================= */
